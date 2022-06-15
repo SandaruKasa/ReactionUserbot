@@ -1,0 +1,17 @@
+[Unit]
+Description=Reaction Telegram userbot
+After=network.target
+
+[Service]
+Type=simple
+User=username
+# pyrogram will store its .session file in the working diretory,
+# so let's make it the project directory
+WorkingDirectory=/path-to-project/
+ExecStart=/path-to-project/service/launch.sh
+
+RestartSec=10
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
